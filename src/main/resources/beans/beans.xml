@@ -10,16 +10,9 @@
 						   http://www.springframework.org/schema/context/spring-context-3.0.xsd
 						   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
-    <bean id="blabberResource" class="com.intuit.ctof.trackMyExpense.resource.BlabberResource" />
-    <bean id="dealsResource" class="com.intuit.ctof.trackMyExpense.resource.DealsResource" />
-    <bean id="emailResource" class="com.intuit.ctof.trackMyExpense.resource.EmailResource" >
-        <constructor-arg index="0" ref="emailDao" />
-    </bean>
-    <bean id="newsResource" class="com.intuit.ctof.trackMyExpense.resource.NewsResource" />
-    <bean id="travelResource" class="com.intuit.ctof.trackMyExpense.resource.TravelResource" />
+    <bean id ="codeGenResource" class="com.intuit.ctof.trackMyExpense.resource.CodeGenResource" />
     <bean id="apiListingJson" class="com.intuit.ctof.trackMyExpense.resource.ApiListingJson" />
 
-    <bean id="emailDao" class="com.intuit.ctof.trackMyExpense.email.icn.EmailDao" init-method="init"/>
     <bean id="jsonProvider" class="com.intuit.ctof.trackMyExpense.provider.JacksonJsonProvider" scope="singleton"/>
 
     <bean id="swaggerConfig" class="com.wordnik.swagger.jaxrs.config.BeanConfig">
@@ -32,8 +25,6 @@
         <property name="scan" value="true"/>
     </bean>
 
-
-    <bean id ="newsHtml" class="com.intuit.ctof.trackMyExpense.htmlStuff.NewsHtml" />
     <bean id="resourceWriter" class="com.wordnik.swagger.jaxrs.listing.ResourceListingProvider" scope="singleton" />
     <bean id="apiWriter" class="com.wordnik.swagger.jaxrs.listing.ApiDeclarationProvider" scope="singleton"/>
 
